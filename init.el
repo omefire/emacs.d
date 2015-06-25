@@ -75,3 +75,15 @@
   '(add-hook 'js2-mode-hook
              (lambda ()
                (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
+
+;; Set tern up for javascript: See http://ternjs.net/doc/manual.html#emacs
+;; ToDO: automate the install of all of this init.el on new machines (using make or similar tools). e.g: install npm if not installed and call it
+(add-to-list 'load-path "~/.emacs.d/tern/emacs")
+(autoload 'tern-mode "tern.el" nil t)
+
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
