@@ -1,0 +1,5 @@
+- Setup company-mode
+- Setup haskell
+- Complete tern setup + company-mode: http://emacs.stackexchange.com/questions/3093/how-to-navigate-a-javascript-project
+- Make tern jump to node_modules and require'd files
+- Automate npm install inside .emacs.d (tern & others), use make
