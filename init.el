@@ -84,3 +84,7 @@
    '(progn
       (require 'tern-auto-complete)
       (tern-ac-setup)))
+
+;; Set cursor type
+(setq-default cursor-type 'bar)
+
