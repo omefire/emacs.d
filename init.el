@@ -31,13 +31,15 @@
 ;;(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;;(put 'upcase-region 'disabled nil)
 
 (require 'package)
 (add-to-list 'package-archives
   '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-(put 'upcase-region 'disabled nil)
-
 (load-theme 'deeper-blue t)
+
+;; Javascript setup
+(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
