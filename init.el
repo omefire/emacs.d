@@ -36,3 +36,8 @@
 (add-to-list 'package-archives
   '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
+
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(put 'upcase-region 'disabled nil)
+
+(load-theme 'deeper-blue t)
