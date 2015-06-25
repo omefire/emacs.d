@@ -51,9 +51,6 @@
 
 (setq js2-highlight-level 3)
 
-(define-key js-mode-map "{" 'paredit-open-curly)
-(define-key js-mode-map "}" 'paredit-close-curly-and-newline)
-
 (add-to-list 'load-path "~/.emacs.d/web-beautify")
 (require 'web-beautify) ;; Not necessary if using ELPA package
 (eval-after-load 'js2-mode
