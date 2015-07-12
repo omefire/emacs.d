@@ -88,3 +88,10 @@
 ;; Set cursor type
 (setq-default cursor-type 'bar)
 
+(put 'narrow-to-region 'disabled nil)
+
+
+;; NeoTree 
+(add-to-list 'load-path "elpa/neotree-0.2.1")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
