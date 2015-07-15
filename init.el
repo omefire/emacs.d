@@ -37,6 +37,7 @@
 (require 'package)
 (add-to-list 'package-archives
   '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+
 (package-initialize)
 
 (load-theme 'deeper-blue t)
@@ -90,8 +91,21 @@
 
 (put 'narrow-to-region 'disabled nil)
 
-
 ;; NeoTree 
 (add-to-list 'load-path "elpa/neotree-0.2.1")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+(neotree-show)
+
+;; ---------------------------------------
+;; load elscreen (for tabbed windows)
+;; ---------------------------------------
+(add-to-list 'load-path "elscreen")
+(load "elscreen.el")
+(elscreen-start)
+;; F9 creates a new elscreen, F10 kills it
+(global-set-key [f9] 'elscreen-create)
+(global-set-key [f10] 'elscreen-kill)
+
+;; Enable ido-mode
+(ido-mode)
