@@ -27,6 +27,16 @@
 ;; (setq custom-file (locate-user-emacs-file "custom.el"))
 ;; (load custom-file 'noerror)
 
+
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+
+(package-initialize)
+
+(load-theme 'deeper-blue t)
+
+
 ;; ============== HASKELL MODE ==============================
 
 ;; Install ghc-mod first : https://github.com/omefire/emacs-haskell-tutorial/blob/master/tutorial.md#ghc-mod
@@ -41,20 +51,19 @@
 (autoload 'ghc-debug "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
 
+(require 'company)
+(add-hook 'haskell-mode-hook 'company-mode)
+
+
+(add-to-list 'company-backends 'company-ghc)
+(custom-set-variables '(company-ghc-show-info t))
+
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;;(put 'upcase-region 'disabled nil)
 
 ;; ============== END OF HASKELL MODE ==============================
-
-(require 'package)
-(add-to-list 'package-archives
-  '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-
-(package-initialize)
-
-(load-theme 'deeper-blue t)
 
 
 ;; JAVASCRIPT SETUP
